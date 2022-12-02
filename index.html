@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--Declare normalize.css stylsheet first-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <title>Portfolio - KS</title>
+    </head>
+    <body id="top">
+        <!--Lightbulb checkbox input must appear first for dark/light mode toggle to work properly-->
+        <input class="l" type="checkbox"/>
+
+        <div class="main-container">
+            <!--Header-->
+            <header class="header flex-container">
+                <h1>Kwabena Sarfo</h1>
+                <p>Portfolio</p>
+            </header>
+
+            <!--Navigation bar-->
+
+            <nav>
+                <div class="flex-nav-container">
+                    <a href="#intro-link"> Home </a>
+                    <a href="#about-link"> About </a>
+                    <a href="#contact-link"> Contact </a>
+                </div>    
+            </nav>
+
+            <!--main semantic -->
+            <main >
+                <div id="intro-link" class="intro">
+                    <!--article semantic -->
+                    <article>
+                     <div class="flex-article-container">
+                        <!--Intro section-->
+                         <div class="article-content">
+                            <h2> Introduction</h2>
+                            <div class=" flex-profile-img">
+                            <img src="images/mug-2022.png" alt="A mug shot">
+                            </div>
+
+                            <p>Creative thinker and an aspiring Software Developer located in the United States</p>
+
+                            <p>My interests and experience is as follows:</p>
+
+                             <ul>
+                                 <li>Front-end and back-end development using the latest C# and .NET technologies</li>
+                                 <li>IoT projects utilizing microcontroller based products connected to cloud based services</li>
+                                 <li>Getting up to speed on Angular, React TypeScript and other modern frameworks </li>
+                             </ul>
+
+                             <p>View the rest of my portfolio and feel free to   </p>
+                            
+                            <div class="code-block"></div>
+                        <!-- BASIC EMAIL LINK HERE -->
+                        <a href="mailto:ksarfodev@gmail.com">Contact Me </a>
+                     </div>
+                    </div>
+                    </article>
+                    <hr>
+                 </div>
+                 <div id="about-link" class="about">
+                
+                     <article>
+                        <div class="flex-article-container">
+                            <!--About me section-->
+                            <div class="article-content">
+                                <h2> About Me</h2>
+                                <!--h3 element-->
+                                <h3>Background</h3>
+                                <p>After graduating with an associates degree in Electronics Engineering, I've had the opportunity to work with and learn from experienced Sofware and Mobile App Developers. Since the release of .NET core, I've been enthused about using C# to control Linux based computers and explore the .NET nanoFramework as well. </p><br>
+
+                                <p>As a student at Thinkful, I wish to expand my skillset and become just as passionate about additional technologies such as React and Node.</p><br>
+
+                            </div>
+                        </div>
+                     </article>
+                     <hr>
+
+                 </div>
+                 <div id="contact-link" class="contact">
+                    <article>
+                        <div class="flex-article-container">
+                            <!--Contact section-->
+                            <div class="article-content">
+                                <h2> Contact Info</h2>
+                                <ol>
+                                    <li><a href="https://github.com/ksarfodev">Github</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.linkedin.com/in/kwabena-s-134721249/" >LinkedIn</a>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </article>
+                 </div>
+                 <a href="#top"> Back to top </a>
+            </main>
+            <!--footer semantic -->
+            <footer class="flex-container">
+                <p>© Kwabena Sarfo 2022</p>
+                <p>(Images from Unsplash)</p>
+            </footer>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Montserrat:wght@300;500&display=swap');
+
+/*initialize variables to allow toggling between dark mode and light mode using CSS only*/
+:root {
+    --bg-color: #00000075;
+    --font-color: #ffffff;
+  }
+  
+
+
+/* Better practice https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/*/
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+
+
+/* Set Montesarrat as preferred font with fallback fonts, set background color and center content */
+body {
+    
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+    place-items: center; 
+    width: 100%;
+    background-color: #161616;
+}
+
+/*CSS grid for a responsive web page*/
+.main-container{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-template-rows: 1fr .1fr 3fr 2fr 1fr .5fr;
+    grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "main"
+    "main"
+    "footer";
+
+    font-weight: 800;
+    text-align: center;
+    gap: 1px;  
+}
+
+/*Styled links using pseudo-classes*/
+a:link{
+    color: rgb(160, 159, 159);
+}
+a:visited{
+color: rgb(74, 71, 71);
+}
+a:hover{
+    color: rgb(0, 12, 238);
+
+}
+a:active{
+color: rgb(255, 249, 136);
+}
+
+
+/*adjust material icon size */
+.material-icons.md-60 { 
+    font-size: 60px; 
+}
+
+/* Shared flexbox container */
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+
+/*Flexbox container for navigation bar*/
+.flex-nav-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    background-color:  var(--bg-color2);
+    color:  var(--font-color2);
+    padding: 5px 0px 5px 0;
+    margin: 0 20vw 0 20vw;
+}
+
+/*Flexbox container for articles*/
+.flex-article-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-color:  var(--bg-color);
+    color:  var(--font-color);
+    padding: 5px 0px 5px 0px;
+    margin: 0 20vw 0 20vw;
+
+}
+
+/*Style horizontal rule to create embossed effect*/
+hr{
+    margin: 0 20vw 0 20vw;
+    color: rgb(68, 68, 68);
+    height: 0.2px;
+}
+
+
+/*Style the content in the article tags*/
+.article-content{
+    display: flex;
+    flex-direction: column;
+    flex-wrap:nowrap;
+    justify-content: center; 
+    align-items: center;
+    min-width: 250px;
+}
+
+/*Used to adjust the size of profile image*/
+img{
+    width: 20vw;
+    height: 20vh;
+    border-radius: 50%;
+}
+
+/*Flexbox container for the profile picture*/
+.flex-profile-img {
+    display: flex;
+    flex-wrap:nowrap;
+    justify-content: center; 
+    flex: 1;
+    padding: 10px;
+    margin: 10px;
+    padding: 5px;
+    width: 50px;
+    height: 30px;
+    line-height: 50px;
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
+    text-align: center;
+  }
+
+header {
+    grid-area: header;
+    background-color: var(--bg-color);
+    color:var(--font-color);
+}
+
+/*Style only the paragraph in the header*/
+header > p {
+    color:#888;
+}
+
+
+h2{
+    color:#888;
+}
+
+footer{
+    grid-area: footer;
+    background-color:  black;
+    color:white;
+}
+
+nav {
+    grid-area: nav;
+    background-color: black;
+    color:  white;
+    font-size: 22px;
+}
+
+main {
+    grid-area: main;
+    background-color:  var(--bg-color);
+    color:  var(--font-color);
+}
+
+/*classes for styling various articles in main section*/
+.intro {
+    grid-area: main;
+    background-color:  var(--bg-color);
+    color:  var(--font-color);
+}
+
+.about {
+    grid-area: main;
+    background-color:  var(--bg-color);
+    color:  var(--font-color);
+}
+
+.contact {
+    grid-area: main;
+    background-color:  var(--bg-color);
+    color:  var(--font-color);
+}
+
+/*Add margin to li to seperate text*/
+li{
+    padding:5px;
+    margin:5px 5px 5px 5px;
+
+}
+
+p{
+    margin:10px;
+}
+
+/*Configure styling for smaller screens*/
+@media only screen and (max-width:533px) {
+    .main-container{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-template-rows: .5fr .1fr 2fr 1fr .5fr .2fr;
+        grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "main"
+        "main"
+        "footer";
+    
+        font-weight: 800;
+        text-align: center;
+        gap: 1px;  
+    }
+
+    .flex-nav-container {
+
+        margin: 0 0 0 0;
+
+    }
+    .flex-article-container {
+
+        margin: 0 0 0 0;
+    }
+    hr{
+        margin: 0 0 0 0;
+    }
+    img{
+        width: 15vw;
+        height: 8vh;
+    }
+}
+
+/* Light bulb CSS toggle provided by: https://codepen.io/jkantner/pen/XEzWGr*/
+/*Bulb toggle button is created as an input*/
+input {
+	display: block;
+	margin-bottom: 1.5em;
+}
+
+/*"l" stands for lightbulb, style the lightbulb*/
+
+.l {
+	background-color: rgba(0,0,0,0.7);
+	border-radius: 0.75em;
+	box-shadow: 0.125em 0.125em 0 0.125em rgba(0,0,0,0.3) inset;
+	color: #fdea7b;
+	display: inline-flex;
+	align-items: center;
+	margin: auto;
+	padding: 0.15em;
+	width: 3em;
+	height: 1.5em;
+	transition: background-color 0.1s 0.3s ease-out, box-shadow 0.1s 0.3s ease-out;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+    transform: rotate(90deg); /*rotate the light bulb 90 degrees*/
+    position: absolute;
+    z-index: 2;
+    top: 40px;
+}
+.l:before, .l:after {
+	content: "";
+	display: block;
+}
+.l:before {
+	background-color: #d7d7d7;
+	border-radius: 50%;
+	width: 1.2em;
+	height: 1.2em;
+	transition: background-color 0.1s 0.3s ease-out, transform 0.3s ease-out;
+	z-index: 1;
+}
+.l:after {
+	background:
+		linear-gradient(transparent 50%, rgba(0,0,0,0.15) 0) 0 50% / 50% 100%,
+		repeating-linear-gradient(90deg,#bbb 0,#bbb,#bbb 20%,#999 20%,#999 40%) 0 50% / 50% 100%,
+		radial-gradient(circle at 50% 50%,#888 25%, transparent 26%);
+	background-repeat: no-repeat;
+	border: 0.25em solid transparent;
+	border-left: 0.4em solid #d8d8d8;
+	border-right: 0 solid transparent;
+	transition: border-left-color 0.1s 0.3s ease-out, transform 0.3s ease-out;
+	transform: translateX(-22.5%);
+	transform-origin: 25% 50%;
+	width: 1.2em;
+	height: 1em;
+}
+
+/* Checked */
+.l:checked + *, 
+.l:checked + body{
+	/* background-color: rgba(0,0,0,0.45); */
+	box-shadow: 0.125em 0.125em 0 0.125em rgba(0,0,0,0.1) inset;
+    --bg-color: #b8b8b8;
+
+    --font-color: #00000075;
+
+
+}
+.l:checked:before {
+	background-color: currentColor;
+	transform: translateX(125%)
+}
+.l:checked:after {
+	border-left-color: currentColor;
+	transform: translateX(-2.5%) rotateY(180deg);
+}
+/* Other States */
+.l:focus {
+	/* Usually an anti-A11Y practice but set to remove an annoyance just for this demo */
+	outline: 0;
+}
+
+/*End of file*/
