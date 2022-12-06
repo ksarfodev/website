@@ -2,8 +2,10 @@
 
 /*initialize variables to allow toggling between dark mode and light mode using CSS only*/
 :root {
-    --bg-color: #00000075;
+    --bg-color: #00417d;
     --font-color: #ffffff;
+    --bg-color2:#494949;
+    --link-color:rgb(217, 217, 217);
   }
   
 
@@ -25,14 +27,15 @@ body {
     font-family: "Montserrat", Arial, Helvetica, sans-serif;
     place-items: center; 
     width: 100%;
-    background-color: #161616;
+    background-color:  rgb(116, 116, 116);/*rgb(172, 172, 172);*/
+   
 }
 
 /*CSS grid for a responsive web page*/
 .main-container{
     display: grid;
     grid-template-columns: repeat(1,1fr);
-    grid-template-rows: 1fr .1fr 3fr 2fr 1fr .5fr;
+    grid-template-rows: .5fr .1fr 3fr 2fr 1fr .5fr;
     grid-template-areas:
     "header"
     "nav"
@@ -46,19 +49,23 @@ body {
     gap: 1px;  
 }
 
+div >main > a {
+    padding:50px 0 50px 0; 
+}
+
 /*Styled links using pseudo-classes*/
 a:link{
-    color: rgb(160, 159, 159);
+    color: var(--link-color);
 }
 a:visited{
-color: rgb(74, 71, 71);
+color: rgb(139, 139, 139);
 }
 a:hover{
-    color: rgb(0, 12, 238);
+    color: rgb(20, 20, 182);
 
 }
 a:active{
-color: rgb(255, 249, 136);
+color: rgb(217, 49, 49);
 }
 
 
@@ -81,10 +88,11 @@ color: rgb(255, 249, 136);
     display: flex;
     justify-content: space-evenly;
     flex-wrap: nowrap;
-    background-color:  var(--bg-color2);
-    color:  var(--font-color2);
+    background-color: rgb(116, 116, 116);
+    color:  white;
     padding: 5px 0px 5px 0;
     margin: 0 20vw 0 20vw;
+    font-size: 22px;
 }
 
 /*Flexbox container for articles*/
@@ -92,12 +100,10 @@ color: rgb(255, 249, 136);
     display: flex;
     justify-content: center;
     align-items: center;
-    
     background-color:  var(--bg-color);
     color:  var(--font-color);
     padding: 5px 0px 5px 0px;
     margin: 0 20vw 0 20vw;
-
 }
 
 /*Style horizontal rule to create embossed effect*/
@@ -116,6 +122,8 @@ hr{
     justify-content: center; 
     align-items: center;
     min-width: 250px;
+    max-width: 700px;
+    padding:50px 0px 50px 0px; 
 }
 
 /*Used to adjust the size of profile image*/
@@ -149,59 +157,54 @@ header {
     color:var(--font-color);
 }
 
-/*Style only the paragraph in the header*/
-header > p {
-    color:#888;
-}
-
-
-h2{
+h2,h3{
     color:#888;
 }
 
 footer{
     grid-area: footer;
-    background-color:  black;
-    color:white;
-}
+    background-color: var(--bg-color);
+    color:var(--font-color);
+} 
 
 nav {
     grid-area: nav;
-    background-color: black;
-    color:  white;
-    font-size: 22px;
 }
 
 main {
     grid-area: main;
-    background-color:  var(--bg-color);
     color:  var(--font-color);
+    background-color:var(--bg-color2);
 }
 
 /*classes for styling various articles in main section*/
 .intro {
     grid-area: main;
-    background-color:  var(--bg-color);
     color:  var(--font-color);
+    background-color:var(--bg-color2);
 }
 
 .about {
     grid-area: main;
-    background-color:  var(--bg-color);
     color:  var(--font-color);
+    background-color:var(--bg-color2);
 }
 
 .contact {
     grid-area: main;
-    background-color:  var(--bg-color);
     color:  var(--font-color);
+    background-color:var(--bg-color2);
+}
+
+ul{
+    margin:0 75px 0 75px;
+    padding: 0 50px 0 50px;
 }
 
 /*Add margin to li to seperate text*/
 li{
     padding:5px;
     margin:5px 5px 5px 5px;
-
 }
 
 p{
@@ -226,14 +229,16 @@ p{
         text-align: center;
         gap: 1px;  
     }
+ 
+    ul{
+        margin:0 25px 0 25px;
+        padding: 0 20px 0 20px;
+    }
 
     .flex-nav-container {
-
         margin: 0 0 0 0;
-
     }
     .flex-article-container {
-
         margin: 0 0 0 0;
     }
     hr{
@@ -245,6 +250,7 @@ p{
     }
 }
 
+/*The following is used to style a light bulb and toggle dark mode without using JavaScript*/
 /* Light bulb CSS toggle provided by: https://codepen.io/jkantner/pen/XEzWGr*/
 /*Bulb toggle button is created as an input*/
 input {
@@ -286,6 +292,7 @@ input {
 	transition: background-color 0.1s 0.3s ease-out, transform 0.3s ease-out;
 	z-index: 1;
 }
+
 .l:after {
 	background:
 		linear-gradient(transparent 50%, rgba(0,0,0,0.15) 0) 0 50% / 50% 100%,
@@ -305,13 +312,10 @@ input {
 /* Checked */
 .l:checked + *, 
 .l:checked + body{
-	/* background-color: rgba(0,0,0,0.45); */
 	box-shadow: 0.125em 0.125em 0 0.125em rgba(0,0,0,0.1) inset;
-    --bg-color: #b8b8b8;
-
+    --bg-color: #c8c8c8;
     --font-color: #00000075;
-
-
+    --link-color:rgb(63, 63, 63);
 }
 .l:checked:before {
 	background-color: currentColor;
