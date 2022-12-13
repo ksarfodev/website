@@ -130,7 +130,6 @@ hr{
 img{
     width: 20vw;
     height: 20vh;
-    border-radius: 50%;
 }
 
 /*Flexbox container for the profile picture*/
@@ -163,8 +162,8 @@ h2,h3{
 
 footer{
     grid-area: footer;
-    background-color: var(--bg-color);
-    color:var(--font-color);
+    background-color: rgb(45, 44, 44);
+    color:whitesmoke;
 } 
 
 nav {
